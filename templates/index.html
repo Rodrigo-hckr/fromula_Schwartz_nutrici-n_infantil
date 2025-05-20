@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Kidney Life Kids "Schwartz"</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <img src="{{ url_for('static', filename='assets/logo2.png') }}" alt="Logo Infantil" class="logo">
+        <h1>Calculadora Kidney<span style="color: orange;"> Life</span> "Schwartz"</h1>
+        <p>Calcula la función renal infantil</p>
+
+        <div class="input-section">
+            <h2>✨ Ingresa los datos ✨</h2>
+
+            <div class="input-group">
+                <label for="altura">Altura (cm):</label>
+                <input type="number" id="altura" required>
+            </div>
+
+            <div class="input-group">
+                <label for="creatinina">Creatinina (mg/dL):</label>
+                <input type="number" id="creatinina" required>
+            </div>
+
+            <button onclick="calcularTFG()">🔍 Calcular</button>
+        </div>
+
+        <div class="result-section">
+            <h2>🎯 Resultado:</h2>
+            <p id="resultado">Introduce los datos y presiona calcular.</p>
+            <p id="estadio"></p>
+            <p id="recomendacion"></p>
+            <img id="imagenEstadio" src="{{ url_for('static', filename='assets/default.png') }}" alt="Resultado" class="hidden">
+        </div>
+
+        <div class="footer">
+            
+            <p>👶 Aprende sobre la salud renal de forma divertida</p>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
+

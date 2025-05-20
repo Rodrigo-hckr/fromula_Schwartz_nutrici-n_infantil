@@ -1,0 +1,75 @@
+body {
+    font-family: 'Comic Sans MS', sans-serif;
+    background-color: #FCE4EC;
+    text-align: center;
+}
+
+.container {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+}
+
+span {
+    color: #ef6502;
+    
+}
+.input-section {
+    background: #76a2a2;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espaciado entre elementos */
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.result-section {
+    background: #FFEBEE;
+    padding: 15px;
+    border-radius: 10px;
+    display: none;
+}
+
+button {
+    background-color: #ef6502;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+img {
+    background-color: transparent;
+}
+
+.logo {
+    width: 300px; /* Tamaño ajustado */
+    height: auto; /* Mantiene la proporción */
+    display: block;
+    margin: 5px auto 10px;
+    background-color: transparent;
+    filter: drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.3)); /* Sombra elegante */
+    animation: glow 1.5s infinite alternate; /* Efecto de brillo */
+}
+
+@keyframes glow {
+    0% {
+        filter: drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.3));
+    }
+    100% {
+        filter: drop-shadow(4px 4px 10px rgba(255, 20, 147, 0.6)); /* Brillo rosado */
+    }
+}
