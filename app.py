@@ -77,7 +77,7 @@ def obtener_historial():
         cursor.execute("SELECT altura, creatinina, tfg, estadio, recomendacion FROM historial ORDER BY id DESC LIMIT 10")
         datos = cursor.fetchall()
 
-    historial = [{"altura": d[0], "creatinina": d[1], "grupo": d[2], "TFG": d[3], "Estadio": d[4], "Recomendación": d[5]} for d in datos]
+    historial = [{"altura": d[0], "creatinina": d[1], "TFG": d[3], "Estadio": d[4], "Recomendación": d[5]} for d in datos]
     return jsonify(historial)
 
 @app.route('/')
