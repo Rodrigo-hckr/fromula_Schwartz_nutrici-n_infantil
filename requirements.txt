@@ -1,6 +1,5 @@
 Flask
 Gunicorn
-sqlite3
 blinker==1.9.0
 click==8.2.0
 colorama==0.4.6
