@@ -1,10 +1,11 @@
 from flask import Flask, request, jsonify, render_template
 import sqlite3
+import os
 
 app = Flask(__name__, template_folder="templates")
 
 # Configuración de la base de datos
-DB_PATH = "tfg_data.db"
+DB_PATH = os.getenv("DATABASE_URL", "tfg_data.db")
 
 def init_db():
     """Inicializa la base de datos"""
@@ -73,7 +74,7 @@ def obtener_historial():
     """Endpoint para obtener el historial de cálculos con estadios"""
     with sqlite3.connect(DB_PATH) as conn:
         cursor = conn.cursor()
-        cursor.execute("SELECT altura, creatinina, grupo, tfg, estadio, recomendacion FROM historial ORDER BY id DESC LIMIT 10")
+        cursor.execute("SELECT altura, creatinina, tfg, estadio, recomendacion FROM historial ORDER BY id DESC LIMIT 10")
         datos = cursor.fetchall()
 
     historial = [{"altura": d[0], "creatinina": d[1], "grupo": d[2], "TFG": d[3], "Estadio": d[4], "Recomendación": d[5]} for d in datos]
@@ -85,5 +86,5 @@ def home():
     return render_template("index.html")
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
 
